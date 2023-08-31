@@ -5,7 +5,7 @@ go by indeces (text, screen, word)."""
 import pandas as pd
 import os
 
-file_surprisal = 'data/SB-SAT/raw/stimuli/surprisal.csv'
+file_surprisal = 'data/SB-SAT/interim/stimuli/surprisal.csv'
 
 df = pd.read_csv(file_surprisal)
 

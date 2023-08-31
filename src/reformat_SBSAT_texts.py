@@ -31,9 +31,9 @@ args = parser.parse_args()
 
 class ReformatedTexts:
     def __init__(self):
-        self.raw_texts_directory: str = "data/SB-SAT/raw/stimuli/texts_sb_sat.txt"
+        self.raw_texts_directory: str = "data/SB-SAT/interim/stimuli/texts_sb_sat.txt"
         self.out_directory: str = "data/SB-SAT/interim/stimuli"
-       # self.sentences_directory = (os.path.join(self.out_directory, 'sbsat_sentences'))
+        self.sentences_directory = (os.path.join(self.out_directory, 'sbsat_sentences'))
         self.sentences_screens_directory = (os.path.join(self.out_directory, 'sbsat_sentences_screens'))
        # self.sentences_screens_corrected_directory = (os.path.join(self.out_directory, 'sbsat_sentences_screens_corr'))
         self.text_files = self.read_file()  # [(text_id, screen_id, sentence_id, sentence), ...]
@@ -232,10 +232,10 @@ def main():
         print("Starting to reformat English stimulus texts (SB-SAT)...")
         r.create_new_directories()
         print("Reformating files...")
-        # r.write_sentences_to_file()  # write data with one file per text, one sentence per line
+        r.write_sentences_to_file()  # write data with one file per text, one sentence per line
         # THIS IS WHAT WE ACTUALLY NEED FOR ANNOTATE_TEXTS.PY:
         r.write_sentences_of_all_screens_to_file()  # write data with one file per screen, one sentence per line
-        print("Reformated data can be found in ", r.out_directory)
+        print("===> Reformated data can be found in", r.out_directory)
 
 
     elif args.tokenize is True:

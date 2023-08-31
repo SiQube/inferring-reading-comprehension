@@ -1142,7 +1142,6 @@ class FixationDataset:
 
         # the columns are now equal, we can drop one of them and rename the other to 'word'
         if self.data['word_x'].equals(self.data['word_y']):
-            print("TRUUUE!")
             self.data = self.data.rename(columns={'word_x': 'word'})
             self.data = self.data.drop(columns='word_y')
 
@@ -1353,7 +1352,7 @@ class FixationDataset:
 
 def read_and_clean_indico():
     """Create Dataset, find alignment problems between data.csv & lexical_features_fixed.csv, merge dataframes."""
-    print("Start arranging Fixation data")
+    print("Start arranging fixation data")
     fix_df = FixationDataset(type="indico")
     # fix_df.check_dependency_alignment()
     print("Things to fix: ")
@@ -1393,7 +1392,7 @@ def read_and_clean_indico():
 
 def read_and_clean_sbsat():
     """Create Dataset, find alignment problems between data.csv & lexical_features_fixed.csv, merge dataframes."""
-    print("Start arranging Fixation data")
+    print("Start arranging fixation data")
     # fix_df = FixationDataset(type="et_indiff")
     fix_df = FixationDataset(type="sbsat")
 
